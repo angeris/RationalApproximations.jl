@@ -26,5 +26,8 @@ value(.5, poly)
 # 0.7616562869126146
 ```
 
-A plot of the output:
+You can, of course, plot the approximation against the true value:
+
 ![plot of the output](readme_output.png)
+
+(If you want better approximations, use higher degrees! ;)
