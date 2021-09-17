@@ -27,4 +27,4 @@ value(.5, poly)
 ```
 
 A plot of the output:
-![readme_output.png]
+![plot of the output](readme_output.png)
