@@ -18,6 +18,7 @@ using RationalApproximations
 x = range(-2, 2, length=100)
 f(x) = exp(-x^2)
 
+# Fit a rational approximation with degree 3 in the numerator and 3 in the denominator
 poly = fit(x, f.(x), 3, 3)
 
 f(.5)
