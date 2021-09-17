@@ -2,7 +2,7 @@ module RationalApproximations
 
 using LsqFit
 
-export value, fit, RationalPoly, length, iterate
+export value, fit, RationalPoly
 
 struct RationalPoly
     numerator::Vector{Float64}
