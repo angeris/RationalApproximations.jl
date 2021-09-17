@@ -1,0 +1,7 @@
+name = "RationalApproximations.jl"
+uuid = "b4891bb4-b836-43a7-8c4c-ba578dcf39c1"
+authors = ["guille <angeris@stanford.edu>"]
+version = "0.1.0"
+
+[deps]
+LsqFit = "2fda8390-95c7-5789-9bda-21331edee243"
