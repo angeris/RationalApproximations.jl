@@ -2,7 +2,7 @@ module RationalApproximations
 
 using LsqFit
 
-export f, fit, RationalPoly
+export value, fit, RationalPoly
 
 struct RationalPoly
     numerator::Vector{Float64}
@@ -26,11 +26,11 @@ function eval_poly(x, coef::Vector{Float64})
     return out
 end
 
-function f(x, p::Vector{Float64}, deg_num::Int) 
+function value(x, p::Vector{Float64}, deg_num::Int) 
     num, den = to_num_den(p, deg_num)
     return eval_poly(x, num) ./ eval_poly(x, den)
 end
-f(x, p::RationalPoly) = eval_poly(x, p.numerator) ./ eval_poly(x, p.denominator)
+value(x, p::RationalPoly) = eval_poly(x, p.numerator) ./ eval_poly(x, p.denominator)
 
 
 # computes the gradient with respect to the coefficients
@@ -61,7 +61,7 @@ function fit(x, y, degree_numerator::Int, degree_denominator::Int)
     @assert degree_numerator >= 0 && degree_denominator >= 0
     coef = ones(degree_numerator+degree_denominator+2)
 
-    m(t, p) = f(t, p, degree_numerator)
+    m(t, p) = value(t, p, degree_numerator)
     j(t, p) = jac(t, p, degree_numerator)
 
     fit = curve_fit(m, j, x, y, coef)

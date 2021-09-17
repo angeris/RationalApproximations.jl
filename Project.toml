@@ -1,4 +1,4 @@
-name = "RationalApproximations.jl"
+name = "RationalApproximations"
 uuid = "b4891bb4-b836-43a7-8c4c-ba578dcf39c1"
 authors = ["guille <angeris@stanford.edu>"]
 version = "0.1.0"
