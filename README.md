@@ -16,12 +16,15 @@ polynomials in the numerator and denominator, you can write:
 using RationalApproximations
 
 x = range(-2, 2, length=100)
-f(x) = exp.(-x.^2)
+f(x) = exp(-x^2)
 
-poly = fit(x, f(x), 3, 3)
+poly = fit(x, f.(x), 3, 3)
 
 f(.5)
 # 0.7788007830714049
 value(.5, poly)
 # 0.7616562869126146
 ```
+
+A plot of the output:
+![readme_output.png]

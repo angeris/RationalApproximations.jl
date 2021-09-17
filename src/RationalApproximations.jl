@@ -2,12 +2,14 @@ module RationalApproximations
 
 using LsqFit
 
-export value, fit, RationalPoly
+export value, fit, RationalPoly, length, iterate
 
 struct RationalPoly
     numerator::Vector{Float64}
     denominator::Vector{Float64}
 end
+
+Broadcast.broadcastable(x::RationalPoly) = Ref(x)
 
 to_num_den(p::Vector{Float64}, deg_num::Int) = (p[1:deg_num+1], p[deg_num+2:end])
 
